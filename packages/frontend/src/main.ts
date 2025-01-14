@@ -84,8 +84,13 @@ updateIcPrincipalDiv();
 showHideLoginLogout();
 
 siweStateStore.subscribe((snapshot) => {
-  const { prepareLoginStatus, prepareLoginError, loginStatus, loginError } =
-    snapshot.context;
+  const {
+    prepareLoginStatus,
+    prepareLoginError,
+    loginStatus,
+    loginError,
+    signMessageStatus,
+  } = snapshot.context;
 
   if (loginStatus === "idle") {
     loginButton.innerHTML = "Login";
@@ -98,6 +103,10 @@ siweStateStore.subscribe((snapshot) => {
   if (loginStatus === "logging-in") {
     loginButton.innerHTML = "Logging in...";
     loginButton.disabled = true;
+  }
+  if (signMessageStatus === "pending") {
+    loginButton.innerHTML = "Signing SIWE message...";
+    loginButton.disabled;
   }
   if (loginStatus === "error") {
     loginButton.innerHTML = "Login";
