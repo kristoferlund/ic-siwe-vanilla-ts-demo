@@ -31,12 +31,12 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       <div class="pill">No framework</div>
     </div>
     <div class="container">
-      <div class="ethAddress" id="ethAddress"></div>
-      <div class="icPrincipal" id="icPrincipal"></div>
-      <button id="connectButton" type="button">Connect</button>
-      <button id="loginButton" type="button" hidden>Login</button>
-      <button id="logoutButton" type="button" hidden>Logout</button>
-      <div class="error" id="error"></div>
+      <div id="ethAddress" style="display: none"></div>
+      <div id="icPrincipal" style="display: none"></div>
+      <button id="connectButton" type="button">Connect wallet</button>
+      <button id="loginButton" type="button" style="display: none">Login</button>
+      <button id="logoutButton" type="button" style="display: none">Logout</button>
+      <div class="error" id="error" style="display: none"></div>
     </div>
 `;
 
@@ -59,9 +59,11 @@ function updateIcPrincipalDiv() {
     let principal = identity.getPrincipal().toText();
     icPrincipalDiv.innerHTML =
       principal.slice(0, 6) + "..." + principal.slice(-4);
+    icPrincipalDiv.style.display = "block";
     return;
   }
   icPrincipalDiv.innerHTML = "";
+  icPrincipalDiv.style.display = "none";
 }
 
 function showHideLoginLogout() {
@@ -69,12 +71,12 @@ function showHideLoginLogout() {
   if (!walletClient) return;
   const identity = siweStateStore.getSnapshot().context.identity;
   if (identity) {
-    loginButton.hidden = true;
-    logoutButton.hidden = false;
+    loginButton.style.display = "none";
+    logoutButton.style.display = "block";
     return;
   }
-  loginButton.hidden = false;
-  logoutButton.hidden = true;
+  loginButton.style.display = "block";
+  logoutButton.style.display = "none";
 }
 
 attemptCreateWalletClient();
@@ -87,15 +89,19 @@ siweStateStore.subscribe((snapshot) => {
 
   if (loginStatus === "idle") {
     loginButton.innerHTML = "Login";
+    loginButton.disabled = false;
   }
   if (prepareLoginStatus === "preparing") {
     loginButton.innerHTML = "Preparing...";
+    loginButton.disabled = true;
   }
   if (loginStatus === "logging-in") {
     loginButton.innerHTML = "Logging in...";
+    loginButton.disabled = true;
   }
   if (loginStatus === "error") {
     loginButton.innerHTML = "Login";
+    loginButton.disabled = false;
   }
 
   showHideLoginLogout();
@@ -103,21 +109,27 @@ siweStateStore.subscribe((snapshot) => {
 
   if (loginError) {
     errorDiv.innerHTML = loginError.message;
+    errorDiv.style.display = "block";
   } else if (prepareLoginError) {
     errorDiv.innerHTML = prepareLoginError.message;
+    errorDiv.style.display = "block";
   } else {
     errorDiv.innerHTML = "";
+    errorDiv.style.display = "none";
   }
 });
 
 localStore.subscribe(async (snapshot) => {
   const context = snapshot.context;
   if (context.walletClient) {
-    connectButton.hidden = true;
-    loginButton.hidden = false;
+    connectButton.style.display = "none";
     const [address] = await context.walletClient.getAddresses();
     if (address) {
+      ethAddressDiv.style.display = "block";
       ethAddressDiv.innerHTML = address.slice(0, 6) + "..." + address.slice(-4);
     }
+  } else {
+    ethAddressDiv.style.display = "none";
   }
+  showHideLoginLogout();
 });
