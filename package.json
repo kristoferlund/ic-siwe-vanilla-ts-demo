@@ -24,7 +24,7 @@
     "@dfinity/candid": "^2.2.0",
     "@dfinity/identity": "^2.2.0",
     "@xstate/store": "^2.6.2",
-    "ic-use-siwe-identity": "^0.1.2",
+    "ic-siwe-js": "^0.2.0",
     "viem": "^2.22.8"
   }
 }

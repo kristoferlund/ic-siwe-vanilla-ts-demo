@@ -2,15 +2,12 @@ import "./style.css";
 import typescriptLogo from "/typescript.svg";
 import icLogo from "/ic.svg";
 import ethLogo from "/ethereum.svg";
-import {
-  canisterId,
-  idlFactory,
-} from "../../ic_siwe_provider/declarations/index";
+import { canisterId } from "../../ic_siwe_provider/declarations/index";
 import { attemptCreateWalletClient, connectWallet } from "./ethereum";
 import { localStore } from "./state";
-import { SiweManager, siweStateStore } from "ic-use-siwe-identity";
+import { SiweManager, siweStateStore } from "ic-siwe-js";
 
-const siwe = new SiweManager(idlFactory, canisterId);
+const siwe = new SiweManager(canisterId);
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
     <div>
