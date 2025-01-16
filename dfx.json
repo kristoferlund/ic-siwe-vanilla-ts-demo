@@ -18,7 +18,7 @@
     },
     "frontend": {
       "build": ["pnpm run build"],
-      "source": ["dist"],
+      "source": ["packages/frontend/dist"],
       "type": "assets"
     }
   },

@@ -22,7 +22,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       </a>
     </div>
     <h1>Sign in with Ethereum</h1>
-    <div>This demo application and template demonstrates how to sign in Ethereum users into an IC canister using ic-use-siwe-identity and ic-siwe-provider canister.</div>
+    <div>This demo application and template demonstrates how to sign in Ethereum users into an IC canister using <a href="https://www.npmjs.com/package/ic-siwe-js">ic-siwe-js</a> and the <a href="https://github.com/kristoferlund/ic-siwe">ic-siwe-provider</a> canister.</div>
     <div class="pill-container">
       <div class="pill">Vanilla TS</div>
       <div class="pill">No framework</div>
@@ -34,6 +34,15 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       <button id="loginButton" type="button" style="display: none">Login</button>
       <button id="logoutButton" type="button" style="display: none">Logout</button>
       <div class="error" id="error" style="display: none"></div>
+    </div>
+    <div className="links">
+      <a
+        href="https://github.com/kristoferlund/ic-siwe-vanilla-ts-demo"
+         target="_blank"
+         rel="noreferrer"
+      >
+        <img src="https://img.shields.io/badge/github-ic--siwe--vanilla--ts--demo-blue.svg?style=for-the-badge" />
+      </a>
     </div>
 `;
 

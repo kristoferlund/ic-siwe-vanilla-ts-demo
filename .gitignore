@@ -27,3 +27,5 @@ dist-ssr
 target
 .env
 declarations
+Makefile.prod
+canister_ids.json

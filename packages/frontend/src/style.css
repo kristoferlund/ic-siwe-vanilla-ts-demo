@@ -95,3 +95,20 @@ button:focus-visible {
   gap: 1em;
   flex-direction: column;
 }
+
+.links {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.links img {
+  opacity: 0.5;
+}
+
+.links img:hover {
+  opacity: 1;
+}

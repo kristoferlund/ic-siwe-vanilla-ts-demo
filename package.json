@@ -1,7 +1,7 @@
 {
   "name": "ic-siwe-vanilla-js-demo",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -24,7 +24,7 @@
     "@dfinity/candid": "^2.2.0",
     "@dfinity/identity": "^2.2.0",
     "@xstate/store": "^2.6.2",
-    "ic-siwe-js": "^0.2.0",
+    "ic-siwe-js": "^0.2.1",
     "viem": "^2.22.8"
   }
 }

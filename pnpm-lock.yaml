@@ -21,8 +21,8 @@ importers:
         specifier: ^2.6.2
         version: 2.6.2(react@18.3.1)
       ic-siwe-js:
-        specifier: ^0.2.0
-        version: 0.2.0(@dfinity/agent@2.2.0(@dfinity/candid@2.2.0(@dfinity/principal@2.2.0))(@dfinity/principal@2.2.0))(@dfinity/candid@2.2.0(@dfinity/principal@2.2.0))(@dfinity/identity@2.2.0(@dfinity/agent@2.2.0(@dfinity/candid@2.2.0(@dfinity/principal@2.2.0))(@dfinity/principal@2.2.0))(@dfinity/principal@2.2.0))(@dfinity/principal@2.2.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(viem@2.22.8(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))
+        specifier: ^0.2.1
+        version: 0.2.1(@dfinity/agent@2.2.0(@dfinity/candid@2.2.0(@dfinity/principal@2.2.0))(@dfinity/principal@2.2.0))(@dfinity/candid@2.2.0(@dfinity/principal@2.2.0))(@dfinity/identity@2.2.0(@dfinity/agent@2.2.0(@dfinity/candid@2.2.0(@dfinity/principal@2.2.0))(@dfinity/principal@2.2.0))(@dfinity/principal@2.2.0))(@dfinity/principal@2.2.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(viem@2.22.8(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10))
       viem:
         specifier: ^2.22.8
         version: 2.22.8(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10)
@@ -716,8 +716,8 @@ packages:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
     engines: {node: '>=8'}
 
-  ic-siwe-js@0.2.0:
-    resolution: {integrity: sha512-mU2+OFjtfFf72IdGEOReUP+aMKugfRmtRbFIe/WSH/zJtVOT7BGkh8iu/PfLOQ7wNxFF+rikW1IRXRJC+iQRyA==}
+  ic-siwe-js@0.2.1:
+    resolution: {integrity: sha512-Ii6ZTy6z0wMOGYh9dza4TpHWlwoOGPzByVBhaWGA0oIPHCI5B0fU0q2q7+B9H/D82TTUBSFrW3w5/wL6aTxyXA==}
     peerDependencies:
       '@dfinity/agent': '>=2.1.2'
       '@dfinity/candid': '>=2.1.1'
@@ -725,11 +725,14 @@ packages:
       '@dfinity/principal': '>=2.1.2'
       react: ^18.3.1
       react-dom: ^18.3.1
-      viem: ^2.22.7
+      viem: ^2.19.0
+      wagmi: ^2.12.0
     peerDependenciesMeta:
       react:
         optional: true
       react-dom:
+        optional: true
+      wagmi:
         optional: true
 
   ieee754@1.2.1:
@@ -1684,7 +1687,7 @@ snapshots:
 
   has-flag@4.0.0: {}
 
-  ic-siwe-js@0.2.0(@dfinity/agent@2.2.0(@dfinity/candid@2.2.0(@dfinity/principal@2.2.0))(@dfinity/principal@2.2.0))(@dfinity/candid@2.2.0(@dfinity/principal@2.2.0))(@dfinity/identity@2.2.0(@dfinity/agent@2.2.0(@dfinity/candid@2.2.0(@dfinity/principal@2.2.0))(@dfinity/principal@2.2.0))(@dfinity/principal@2.2.0))(@dfinity/principal@2.2.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(viem@2.22.8(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10)):
+  ic-siwe-js@0.2.1(@dfinity/agent@2.2.0(@dfinity/candid@2.2.0(@dfinity/principal@2.2.0))(@dfinity/principal@2.2.0))(@dfinity/candid@2.2.0(@dfinity/principal@2.2.0))(@dfinity/identity@2.2.0(@dfinity/agent@2.2.0(@dfinity/candid@2.2.0(@dfinity/principal@2.2.0))(@dfinity/principal@2.2.0))(@dfinity/principal@2.2.0))(@dfinity/principal@2.2.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(viem@2.22.8(bufferutil@4.0.9)(typescript@5.6.3)(utf-8-validate@5.0.10)):
     dependencies:
       '@dfinity/agent': 2.2.0(@dfinity/candid@2.2.0(@dfinity/principal@2.2.0))(@dfinity/principal@2.2.0)
       '@dfinity/candid': 2.2.0(@dfinity/principal@2.2.0)
