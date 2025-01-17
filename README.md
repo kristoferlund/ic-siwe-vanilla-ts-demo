@@ -1,7 +1,7 @@
 ![](media/header.png)
 
 > [!NOTE]  
-> In addition to this vanilla JS/TS demo of ic-siwe, there are more versions, for React etc. Check out the 
+> In addition to this vanilla JS/TS demo of ic-siwe, there are more versions, for React etc. Check out the
 > main package [ic-siwe](https://github.com/kristoferlund/ic-siwe) for more information.
 
 ✅ Sign in with Ethereum to interact with smart contracts (canisters) on the [Internet Computer](https://internetcomputer.org) (IC)!
@@ -26,13 +26,10 @@ The goal of the [ic-siwe](https://github.com/kristoferlund/ic-siwe) project is t
 
 ## Key features
 
-The demo is buit using [Vite](https://vitejs.dev/) to provide a fast development experience. 
+The demo is built using [Vite](https://vitejs.dev/) to provide a fast development experience.
 
 ## Table of contents
 
-- [👀 Try the live demo: https://shtr2-2iaaa-aaaal-qckva-cai.icp0.io](#-try-the-live-demo-httpsshtr2-2iaaa-aaaal-qckva-caiicp0io)
-- [Key features](#key-features)
-- [Table of contents](#table-of-contents)
 - [App components](#app-components)
   - [Backend](#backend)
   - [Frontend](#frontend)
@@ -143,8 +140,6 @@ dfx deploy backend --argument "$$(dfx canister id ic_siwe_provider)"
 ### Frontend
 
 The frontend is a vanilla JS/TS application that interacts with the backend canister. To be able to make authenticated calls to the backend canister, the frontend needs an identity. The identity is retrieved from the `ic_siwe_provider` canister.
-
-
 
 ## Updates
 
